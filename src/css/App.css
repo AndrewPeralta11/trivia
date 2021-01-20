@@ -1,10 +1,12 @@
 body {
   margin: 0;
   padding: 0;
+  background-color:aqua;
 }
 
 .app {
   text-align: center;
+  font-family: 'Lobster', cursive;
 }
 
 
