@@ -12,20 +12,20 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 ### Goal 1: Render a question from sample_data.json on the screen.
 
-- [ ] In App.jsx in the App component, add a variable to set the current question number to 0.
-- [ ] In App.jsx, create a Question component.
-- [ ] Add props to `<Question />` with the text "Question goes here".
-- [ ] Render `<Question />` inside of App.
-- [ ] Replace "Question goes here" with the `question.text` field found in data for the first question.
+- [X] In App.jsx in the App component, add a variable to set the current question number to 0.
+- [X] In App.jsx, create a Question component.
+- [X] Add props to `<Question />` with the text "Question goes here".
+- [X] Render `<Question />` inside of App.
+- [X] Replace "Question goes here" with the `question.text` field found in data for the first question.
 - [ ] BONUS: Add styling to your app.
 
 >![Day 1.0 goal](https://i.imgur.com/eTZAXGk.png)
 
 ### Goal 2: Render a "Next Question" button on the screen.
 
-- [ ] In App.jsx, create a NextQuestion component.
-- [ ] Write the JSX to display a button for the user to click for the next question. (It will not work yet.)
-- [ ] Render `<NextQuestion />` inside of App.
+- [X] In App.jsx, create a NextQuestion component.
+- [X] Write the JSX to display a button for the user to click for the next question. (It will not work yet.)
+- [X] Render `<NextQuestion />` inside of App.
 
 >![Day 1.5 goal](https://i.imgur.com/o4MzPjL.png)
 
