@@ -9,14 +9,25 @@ function Question(props) {
 }
 
 function NextQuestion(props) {
-  return <button>Next Question</button>;
+  return <div><button>Next Question</button></div>;
+}
+
+function Answer(props) {
+  return <button>{props.ansTxt}</button>;
 }
 
 function App() {
-  return <div className="app">
-            <Question quesTxt={data[0].question.text}/>
-            <NextQuestion />
-          </div>;
+  const question = data[0].question;
+  const [ correctAns, setCorrectAns] = useState(false);
+  return (
+    <div className="app">
+      <Question quesTxt={question.text} />
+      {question.choices.map((ansChoice) => (
+        <Answer ansTxt={ansChoice} />
+      ))}
+      <NextQuestion />
+    </div>
+  );
 }
 
 export default App;

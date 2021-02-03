@@ -34,18 +34,18 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 
 ### Goal 1: Render the answer choices from sample_data.json on the screen.
 
-- [ ] In App.jsx, create an Answer component.
-- [ ] Add props to `<Answer />` with the text "Answer goes here".
-- [ ] Render `<Answer />` inside of `<Question />`.
-  - [ ] Pass props for the answer choices into `<Question />`.
-  - [ ] Use those props to render the Answer components inside `<Question />` to display the answer choices.
-- [ ] Refactor to use map to map over all answer choices.
+- [X] In App.jsx, create an Answer component.
+- [X] Add props to `<Answer />` with the text "Answer goes here".
+- [X] Render `<Answer />` inside of `<Question />`.
+  - [X] Pass props for the answer choices into `<Question />`.
+  - [X] Use those props to render the Answer components inside `<Question />` to display the answer choices.
+- [X] Refactor to use map to map over all answer choices.
 
 >![Day 2.0 goal](https://i.imgur.com/VpA8eRc.png)
 
 ### Goal 2: Render a button on the screen that reveals the correct answer when clicked.
 
-- [ ] Add state to `<App />` using the `useState` React hook to keep track of if the question is answered.
+- [X] Add state to `<App />` using the `useState` React hook to keep track of if the question is answered.
 - [ ] Add a button to the App component that updates state to `isAnswered` when clicked.
 - [ ] Set the state of `isAnswered` to display the correct answer choice.
 
