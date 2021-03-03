@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import { createPropertySignature } from "typescript";
 import "../css/App.css";
 import data from "../sample_data.json";
 
@@ -9,23 +10,44 @@ function Question(props) {
 }
 
 function NextQuestion(props) {
-  return <div><button>Next Question</button></div>;
+  return (
+    <div>
+      <button>Next Question</button>
+    </div>
+  );
 }
 
 function Answer(props) {
-  return <button>{props.ansTxt}</button>;
+  return (
+    <button onClick={props.ansClicked} class={`${props.className} ansButton`}>
+      {props.ansTxt}
+    </button>
+  );
 }
 
 function App() {
   const question = data[0].question;
-  const [ correctAns, setCorrectAns] = useState(false);
+  const [selectedAns, setSelectedAns] = useState("notAnswered");
   return (
     <div className="app">
       <Question quesTxt={question.text} />
       {question.choices.map((ansChoice) => (
-        <Answer ansTxt={ansChoice} />
+        <Answer
+          // make green if question is answered
+          className={}
+          ansClicked={() => {
+            setSelectedAns("isAnswered");
+          }}
+          ansTxt={ansChoice}
+        />
       ))}
-      <NextQuestion />
+      {selectedAns}
+      {
+        // stuff related to next question button
+        selectedAns === "isAnswered" ? ( // questions / the conditions
+          <NextQuestion /> // yes / true
+        ) : null // no / false
+      }
     </div>
   );
 }

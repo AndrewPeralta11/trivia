@@ -46,8 +46,8 @@ In this unit, coders will work in groups to build a project using HTML, CSS, Rea
 ### Goal 2: Render a button on the screen that reveals the correct answer when clicked.
 
 - [X] Add state to `<App />` using the `useState` React hook to keep track of if the question is answered.
-- [ ] Add a button to the App component that updates state to `isAnswered` when clicked.
-- [ ] Set the state of `isAnswered` to display the correct answer choice.
+- [X] (1) Add a button to the App component that (2) updates state to `isAnswered` when clicked.
+- [ ] Set the state to reveal which answer was the correct one.
 
 >![Day 2.5 goal - unanswered](https://i.imgur.com/JI6GroE.png)
 >![Day 2.5 goal - answered](https://i.imgur.com/rufYX84.png)
