@@ -12,7 +12,7 @@ function Question(props) {
 function NextQuestion(props) {
   return (
     <div>
-      <button>Next Question</button>
+      <button onClick={props.onClick}>Next Question</button>
     </div>
   );
 }
@@ -27,25 +27,35 @@ function Answer(props) {
 
 function App() {
   const question = data[0].question;
+  const [questionNumber, setQuestionNumber] = useState(quesNum);
   const [selectedAns, setSelectedAns] = useState("notAnswered");
+  function goToNextQuestion() {
+    let nextQuestionNumber = questionNumber + 1;
+    console.log("nextQuestionNumber", nextQuestionNumber);
+    setQuestionNumber(nextQuestionNumber);
+  }
   return (
     <div className="app">
       <Question quesTxt={question.text} />
-      {question.choices.map((ansChoice) => (
-        <Answer
-          // make green if question is answered
-          className={}
-          ansClicked={() => {
-            setSelectedAns("isAnswered");
-          }}
-          ansTxt={ansChoice}
-        />
-      ))}
+      {question.choices.map((ansChoice, index) => {
+        let answerIsCorrect = selectedAns == question.correct_choice_index;
+
+        return (
+          <Answer
+            // make green if question is answered
+            className=""
+            ansClicked={() => {
+              setSelectedAns(index);
+            }}
+            ansTxt={`${ansChoice}`}
+          />
+        );
+      })}
       {selectedAns}
       {
         // stuff related to next question button
-        selectedAns === "isAnswered" ? ( // questions / the conditions
-          <NextQuestion /> // yes / true
+        selectedAns != "notAnswered" ? ( // questions / the conditions
+          <NextQuestion onClick={goToNextQuestion} /> // yes / true
         ) : null // no / false
       }
     </div>
