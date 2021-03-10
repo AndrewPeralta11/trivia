@@ -34,12 +34,11 @@ function App() {
     console.log("nextQuestionNumber", nextQuestionNumber);
     setQuestionNumber(nextQuestionNumber);
   }
+  let answerIsCorrect = selectedAns == question.correct_choice_index;
   return (
     <div className="app">
       <Question quesTxt={question.text} />
       {question.choices.map((ansChoice, index) => {
-        let answerIsCorrect = selectedAns == question.correct_choice_index;
-
         return (
           <Answer
             // make green if question is answered
@@ -51,11 +50,13 @@ function App() {
           />
         );
       })}
-      {selectedAns}
       {
         // stuff related to next question button
         selectedAns != "notAnswered" ? ( // questions / the conditions
-          <NextQuestion onClick={goToNextQuestion} /> // yes / true
+          <div>
+            <div>You got it {answerIsCorrect ? "right" : "wrong"}</div>
+            <NextQuestion onClick={goToNextQuestion} />
+          </div> // yes / true
         ) : null // no / false
       }
     </div>
