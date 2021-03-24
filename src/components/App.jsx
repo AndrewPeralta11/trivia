@@ -44,6 +44,7 @@ function App() {
   let answerIsCorrect = () => selectedAns == question.correct_choice_index;
   // var name =
   let userPickedAns = selectedAns != "notAnswered";
+colors = ['bl']
   let QuestionContent = () => (
     <div>
       <Question quesTxt={question.text} />
