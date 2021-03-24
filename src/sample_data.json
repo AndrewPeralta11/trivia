@@ -10,26 +10,50 @@
   },
   {
     "question": {
-      "choices": ["PopCode", "ScriptEd", "CodeUSA", "CodeEd"],
+      "choices": ["Overwatch", "World of Warcraft", "Diablo", "Starcraft"],
       "correct_choice_index": 1,
       "text": "Blizzard Entertainment is most well known for what video game franchise?",
-      "user_id": "ZbCvDadaM0SD9YjAXrHMEDLVGoj2"
+      "user_id": "Andrew"
     }
   },
   {
     "question": {
-      "choices": ["Andrew Jackson", "Ronald Regan", "Joe Biden", "Barack Obama"],
-      "correct_choice_index": 2,
-      "text": "'Who is the 46th President of the USA'?",
+      "choices": ["1991", "2000", "1897", "1990"],
+      "correct_choice_index": 0,
+      "text": "What year was the Super Nintendo Entertainment System (SNES) released?",
       "user_id": "Andrew"
     }  
   },
   {
     "question": {
-      "choices": ["Andrew Jackson", "Ronald Regan", "Joe Biden", "Barack Obama"],
+      "choices": ["Nintendo Wii", "Xbox One", "Playstation 2", "Sega Genesis"],
       "correct_choice_index": 2,
-      "text": "'Who is the 46th President of the USA'?",
+      "text": "What is the highest-selling gaming console to date?",
       "user_id": "Andrew"
     }  
+  },
+  {
+    "question": {
+      "choices": ["DK Land", "Super Mario", "Luigi", "Jump Man"],
+      "correct_choice_index": 3,
+      "text": "In the original arcade version of Donkey Kong, what was the name of the character that would later be known as Mario?",
+      "user_id": "Andrew"
+    }
+  },
+  {
+    "question": {
+      "choices": ["Mario", "Sonic", "Chicken Little", "Pac-Man"],
+      "correct_choice_index": 1,
+      "text": "What was the first video game character to have a balloon featured in the Macy’s Thanksgiving Day Parade?",
+      "user_id": "Andrew"
+    }
+  },
+  {
+    "question": {
+      "choices": ["Sega", "Nintendo", "Chuck E. Cheese", "Playstation"],
+      "correct_choice_index": 2,
+      "text": "What popular dining franchise is the founder of Atari also responsible for?",
+      "user_id": "Andrew"
+    }
   }
 ]

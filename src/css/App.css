@@ -10,7 +10,14 @@ body {
 }
 
 .ansButton {
-  
+  padding:5px;
 }
 
+.wrong{
+  background-color:red;
+ 
+}
+.right{
+ background-color:green;
 
+}

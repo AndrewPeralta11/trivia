@@ -26,23 +26,35 @@ function Answer(props) {
 }
 
 function App() {
-  const question = data[0].question;
+  let intialAns = "notAnswered";
   const [questionNumber, setQuestionNumber] = useState(quesNum);
-  const [selectedAns, setSelectedAns] = useState("notAnswered");
+  // const question = data[questionNumber].question;
+  let questionData = data[questionNumber];
+  const question = questionData ? questionData.question : null;
+  const [selectedAns, setSelectedAns] = useState(intialAns);
+  function resetQuestion() {
+    setSelectedAns(intialAns);
+  }
   function goToNextQuestion() {
+    resetQuestion();
     let nextQuestionNumber = questionNumber + 1;
-    console.log("nextQuestionNumber", nextQuestionNumber);
     setQuestionNumber(nextQuestionNumber);
   }
-  let answerIsCorrect = selectedAns == question.correct_choice_index;
-  return (
-    <div className="app">
+  // parameter => body
+  let answerIsCorrect = () => selectedAns == question.correct_choice_index;
+  // var name =
+  let userPickedAns = selectedAns != "notAnswered";
+  let QuestionContent = () => (
+    <div>
       <Question quesTxt={question.text} />
       {question.choices.map((ansChoice, index) => {
+        const isThisAnswerCorrect = question.correct_choice_index == index;
+        let className = isThisAnswerCorrect ? "right" : "wrong";
+        let classNameIfAnswered = userPickedAns ? className : "";
         return (
           <Answer
             // make green if question is answered
-            className=""
+            className={classNameIfAnswered}
             ansClicked={() => {
               setSelectedAns(index);
             }}
@@ -52,13 +64,22 @@ function App() {
       })}
       {
         // stuff related to next question button
-        selectedAns != "notAnswered" ? ( // questions / the conditions
+        userPickedAns ? ( // questions / the conditions
           <div>
-            <div>You got it {answerIsCorrect ? "right" : "wrong"}</div>
+            <div>You got it {answerIsCorrect() ? "right" : "wrong"}</div>
             <NextQuestion onClick={goToNextQuestion} />
           </div> // yes / true
         ) : null // no / false
       }
+    </div>
+  );
+  return (
+    <div className="app">
+      {question ? (
+        <QuestionContent />
+      ) : (
+        <div> You Have Answered All the Questions for Today! </div>
+      )}
     </div>
   );
 }
